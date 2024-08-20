@@ -1,0 +1,598 @@
+/* -- common css strt --*/
+:root{
+    /* color */
+    --tab-color:#362f2d;
+    --heading: #555555;
+    --heading-hover: #c7b299;
+    --paragraph: #8c8c8c;
+    --button-bg: #998675;
+    --button-border: #736357;
+    --back-bg: #fbfaf8;
+    --white: #FFFFFF;
+
+    /* font-family */
+    --montserrat: "Montserrat", sans-serif;
+    --ralway: "Raleway", sans-serif;
+}
+/* -- common css end --*/
+
+/* --global css start-- */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5{
+    font-family:var(--ralway);
+    font-size: 30px;
+    color: var(--heading);
+    font-weight: 600;
+}
+p{
+    font-family: var(--montserrat);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--paragraph);
+    line-height: 25px;
+}
+.global-btn{
+    width: 170px;
+    height: 50px;
+    background-color: var(--button-bg);
+    font-family: var(--ralway);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    border-bottom: 3px solid var(--button-border);
+    border-radius: 4px;
+    transition: all linear .3s;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+.global-btn:hover {
+    background-color: var(--tab-color);
+    color: var(--white);
+}
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+img{
+    display: block;
+}
+/* --global css end-- */
+
+/* --heading css start-- */
+#nav{
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+#nav.sticky_menu{
+    position: fixed;
+    background-color: var(--tab-color);
+    z-index: 999;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.menu .main-menu ul{
+    text-align: right;
+}
+.menu .main-menu ul li{
+    display: inline-block;
+    margin-left: 40px;
+}
+.menu .main-menu ul li a{
+    font-family: var(--ralway);
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    transition: all linear .3s;
+}
+.menu .main-menu ul li a:hover{
+    text-decoration: underline;
+    text-decoration-color: var(--white);
+}
+/* --heading css end-- */
+
+/* --hero section css start-- */
+#hero{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/bannner.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero-content .info{
+    width: 670px;
+    height: auto;
+    margin: 0 auto;
+    padding: 360px 0;
+    text-align: center;
+}
+.hero-content .info h3{
+    color: var(--white);
+    font-weight: 300;
+}
+.hero-content .info h2{
+    color: var(--white);
+    font-size: 52px;
+    padding: 10px 0 15px;
+}
+.hero-content .info p{
+    color: var(--white);
+    padding: 0px 20px 45px;
+}
+/* --hero section css end-- */
+
+/* --Feature section css start-- */
+#feature{
+    width: 100%;
+    height: auto;
+}
+.feature-content{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0; 
+}
+.feature-content .item{
+    width: 290px;
+    text-align: center;
+    padding: 0 20px;
+}
+.feature-content .item .item-img{
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    object-fit: cover;
+}
+.feature-content .item .item-img img:nth-child(2){
+    display:none;
+}
+.feature-content .item:hover .item-img img:nth-child(1){
+    display:none;
+}
+.feature-content .item:hover .item-img img:nth-child(2){
+    display:block;
+}
+.feature-content .item .item-text h3{
+    font-size: 22px;
+    padding-bottom: 10px;
+    transition: all linear .3s;
+}
+.feature-content .item:hover .item-text h3{
+    color: var(--heading-hover);
+}
+.feature-content .item .item-text p{
+    font-size: 14px;
+    line-height: 22px;
+    position: relative;
+    padding: 10px 0 20px;
+}
+.feature-content .item .item-text p::after{
+    content: "";
+    width: 50px;
+    height: 2px;
+    bottom: 0;
+    background: var(--heading-hover);
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 10px;
+}
+/* --Feature section css end-- */
+
+/* --CTA section css start-- */
+#cta{
+    width: 100%;
+}
+.cta-content .cta-text{
+    width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+.cta-content .cta-text p{
+    padding: 10px 0 50px;
+}
+.cta-content .cta-img img{
+    width: 100%;
+    transform: scaleX(1.1);
+}
+/* --CTA section css end-- */
+
+/* --CTA-Bottom section css start-- */
+#cta-bottom{
+    width: 100%;
+    height: auto;
+    background: var(--tab-color);
+}
+.cta-bottom-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+}
+.cta-bottom-content .cta-bottom-text h2{
+    font-size: 28px;
+    color: white;
+}
+.cta-bottom-content .cta-bottom-text h2 span{
+    color: var(--heading-hover)
+}
+/* --CTA-Bottom section css end-- */
+
+/* --Project section css start-- */
+#project{
+    width: 100%;
+    padding: 80px 0;
+    background-color: var(--white);
+}
+.project-head{
+    width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+.project-head p{
+    padding: 10px 0 30px;
+}
+.project-button{
+    text-align: center;
+}
+.project-button button{
+    margin: 0 5px;
+}
+.project-button .global-active{
+    padding: 10px 22px;
+    background-color: var(--button-bg);
+    border: 0 0 3px 0 solid var(--button-border);
+    border-radius: 4px;
+    color: var(--white);
+}
+.project-button .gl-btn{
+    padding: 10px 22px;
+    background-color: var(--white);
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    color: #362f2d;
+}
+.project-button .gl-btn:hover{
+    padding: 10px 22px;
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    border-radius: 4px;
+    color: var(--white);
+    cursor: pointer;
+}
+.project-item{
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+.project-item .item{
+    width: 370px;
+}
+.project-item .item .item-img{
+    position: relative;
+}
+.project-item .item .item-img .item-overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #00000097;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all linear .3s;
+}
+.project-item .item:hover .item-img .item-overlay{
+    visibility: visible;
+    opacity: 1;
+}
+.project-item .item .item-text{
+    padding: 20px 20px;
+    background-color: var(--back-bg);
+    position: relative;
+    transition: all linear .3s;
+}
+.project-item .item:hover .item-text{
+    padding: 20px 20px;
+    background-color: var(--tab-color);
+}
+.project-item .item .item-text::after{
+    content: "";
+    width: 25px;
+    height: 25px;
+    rotate: 45deg;
+    position: absolute;
+    background-color: var(--back-bg);
+    top: 0;
+    margin-top: -13px;
+    transition: all linear .3s;
+}
+.project-item .item:hover .item-text::after{
+    background-color: var(--tab-color);
+}
+.project-item .item .item-text h3{
+    font-size: 20px;
+    font-weight: 600;
+    transition: all linear .3s;
+}
+.project-item .item:hover .item-text h3{
+    color: var(--white);
+}
+.project-item .item:hover .item-text p{
+    color: var(--white);
+}
+/* --Project section css end-- */
+
+/* --video section css start-- */
+#video{
+    width: 100%;
+    background-image: url(../images/video.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.video-content{
+    width: 550px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 250px 0;
+}
+.video-content .video-img{
+    width: 100px;
+    margin: 0 auto;
+}
+.video-content h2{
+    color: var(--white);
+    padding: 30px 0 10px;
+}
+.video-content p{
+    color: var(--white);
+}
+/* --video section css end-- */
+
+/* --mobile section css start-- */
+#mobile{
+    width: 100%;
+    height: auto;
+    padding: 80px 0 0;
+}
+.mobile-content{
+    display: flex;
+    justify-content: space-between;
+}
+.mobile-content .mobile-img{
+    width: 430px;
+}
+.mobile-content .mobile-info{
+    width: 700px;
+    align-items: center;
+    padding-top: 70px;
+}
+.mobile-content .mobile-info p{
+    padding: 15px 0;
+    font-size: 14px; 
+}
+.list{
+    padding-top: 20px;
+    padding-left: 40px;
+}
+.list ul li{
+    display: flex;
+    padding: 2px 0;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 34px;
+}
+.list ul li span{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--button-border);
+    margin-right: 10px;
+    margin-top: 7px;
+}
+/* --mobile section css end-- */
+
+/* --Recent Post css start-- */
+#recent{
+    width: 100%;
+    height: auto;
+    padding: 80px 0;
+}
+.recent-content .recent-head{
+    width: 770px;
+    margin: 0 auto;
+    text-align: center;
+}
+.recent-content .recent-head p{
+    padding: 10px 0 50px;
+}
+.recent-content .r-item {
+    width: 370px;
+}
+.recent-content .r-item .item-img {
+    position: relative;
+}
+.recent-content .r-item .item-img-over{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #00000097;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all linear .3s;
+}
+.recent-content .r-item:hover .item-img .item-img-over{
+    visibility: visible;
+    opacity: 1;
+}
+.recent-content .r-item .date{
+    width: 60px;
+    text-align: center;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.recent-content .all-item{
+    display: flex;
+    justify-content: space-between;
+}
+.recent-content .r-item .date h2{
+    font-size: 24px;
+    background-color: #362f2d;
+    color: #FFFFFF;
+    padding: 5px;
+}
+.recent-content .r-item:hover .date h2{
+    background-color: var(--heading-hover);
+    color: #fff;
+}
+.recent-content .r-item .date p{
+    font-size: 16px;
+    background-color: var(--button-border);
+    color: #FFFFFF;
+    padding: 5px;
+}
+.recent-content .r-item .r-item-text {
+    padding: 20px;
+    border: 1px solid #362f2d26;
+    border-radius: 0 0 4px 4px;
+}
+.recent-content .r-item:hover .r-item-text {
+    background-color: #362f2d;
+}
+.recent-content .r-item:hover .r-item-text h2 {
+    color: white;
+}
+.recent-content .r-item:hover .r-item-text p {
+    color: white;
+}
+.recent-content .r-item:hover .r-item-text a {
+    color: white;
+}
+.recent-content .r-item .r-item-text h2 {
+    font-size: 24px;
+}
+.recent-content .r-item .r-item-text P {
+    font-size: 14px;
+    padding: 10px 0 20px;
+}
+.recent-content .r-item .r-item-text a {
+    font-size: 18px;
+    color: var(--paragraph);
+    border-bottom: 1px solid;
+}
+/* --Recent Post css end--
+
+/* --Logo section css start-- */
+#brand{
+    width: 100%;
+    background-image: url(/images/logobg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 120px 0;
+}
+.brand-content{
+    display: flex;
+    justify-content: space-between;
+}
+/* --Logo section css end-- */
+
+/* -- footer section css start-- */
+footer{
+    background-color: var(--tab-color);
+    width: 100%;
+    padding: 80px 0;
+}
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+.footer-content .div1{
+    width: 290px;
+}
+.footer-content .div1 p{
+    font-size: 16px;
+    padding: 25px 0;
+}
+.footer-content .div2{
+    width: 270px;
+}
+.footer-content .div2 .div2-top h2{
+    font-size: 24px;
+    color: var(--white);
+}
+.footer-content .div2 .div2-mid h2{
+    font-size: 18px;
+    padding-bottom: 10px;
+    color: var(--white);
+}
+.footer-content .div2 .div2-mid {
+    padding: 20px 0;
+}
+.footer-content .div2 .div2-bottom h2{
+    font-size: 18px;
+    padding-bottom: 10px;
+    color: var(--white);
+}
+.footer-content .div3{
+    width: 270px;
+}
+.footer-content .div3 .div3-top h2{
+    font-size: 24px;
+    padding-bottom: 10px;
+    color: var(--white);
+}
+.footer-content .div3 .div3-mid h2{
+    font-size: 18px;
+    padding-bottom: 10px;
+    color: var(--white);
+}
+.footer-content .div3 .div3-mid {
+    padding: 20px 0;
+}
+.footer-content .div3 .div3-bottom h2{
+    font-size: 18px;
+    padding-bottom: 10px;
+    color: var(--white);
+}
+.footer-content .div4{
+    width: 270px;
+}
+.footer-content .div4 h2{
+    font-size: 24px;
+    padding-bottom: 10px;
+    color: var(--white);
+}
+.footer-content .div4 .div4-img{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+    flex-direction: row;
+}
+.footer-content .div4 .div4-img img{
+    width: 120px;
+}
+/* -- footer section css end-- */
